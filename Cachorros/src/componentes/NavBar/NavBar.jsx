@@ -10,16 +10,29 @@ import {
   MenuOptionGroup,
   MenuDivider,
   Button,
+  Flex,
+  Heading,
 } from "@chakra-ui/react";
 import { FaAngleDown } from "react-icons/fa";
-import './NavBar';
+import "./NavBar";
+const imgStyle = {
+  width: '100px', // Ajusta el ancho de la imagen
+  height: 'auto', // Mantiene la proporción de la imagen
+  marginTop: '120px'
+};
 const NavBar = () => {
   return (
-    <Flex className="navBar" justify={'space-between'} align={'center'} height={'2vh'} w={100%} >
-      <Heading ml={4}>Logo</Heading>
+    <Flex
+      className={"navBar"}
+      justify={"space-between"}
+      align={"center"}
+      height={"2vh"}
+      w={"100%"}
+    >
+      <Heading ml={4}><img src= 'logo.svg' style={imgStyle} ></img></Heading>
       <Menu>
         <MenuButton as={Button} rightIcon={<FaAngleDown />}>
-          Actions
+          Acciones
         </MenuButton>
         <MenuList>
           <MenuItem>Download</MenuItem>
@@ -29,8 +42,8 @@ const NavBar = () => {
           <MenuItem>Attend a Workshop</MenuItem>
         </MenuList>
       </Menu>
-      <CartWidget />
-    </div>
+      <CartWidget ml={4}/>
+    </Flex>
   );
 };
 

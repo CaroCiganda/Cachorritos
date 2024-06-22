@@ -1,23 +1,23 @@
 //import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
-import './App.css';
-import NavBar from './componentes/NavBar/NavBar';
-import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+//import './App.css'
+import NavBar from './componentes/NavBar/NavBar'
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 import { ChakraProvider } from '@chakra-ui/react'
 function App() {
   return (
-    <>
+    
     <ChakraProvider>
-      <NavBar/>
-      <ItemListContainer title = 'Tamaños'/>
+     <NavBar/>
+      <ItemListContainer title = 'Tienda de Alimentos'/>
     </ChakraProvider>
-    </>
+    
    
-  );
+  )
 }
 
-export default App;
+export default App
 
 /*function App() {
   const [count, setCount] = useState(0)
