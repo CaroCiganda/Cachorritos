@@ -25,8 +25,8 @@ export const productos = [
         stock: 5,
         descripcion: "Recomendado para mascotas en etapa de crecimiento. Bolsa de 7kg.",
         img: 'https://media.istockphoto.com/id/1470000114/es/foto/lindos-cachorros-comiendo-de-sus-cuencos.webp?b=1&s=170667a&w=0&k=20&c=9IsJSlJfJcT9OleRE-2AXIP8BtliQdS9UCoOXbbk0fY=' 
-    }
-    ]  
+    },
+    ];
 
     export const getProducts = () => {
         return new Promise ( (resolve) => {
@@ -34,4 +34,21 @@ export const productos = [
                 resolve (productos)
             }, 2000 )
         })
+    }
+    export const getProductsByCategory = (categoria) => {
+     return new Promise((resolve) => {
+      const productosFiltrados = productos.filter((prod)=> prod.categoria === categoria)
+        setTimeout(() => {
+        resolve(productosFiltrados)
+        }, 2000)
+     })
+    }
+  
+    export const getProductById = (id) => {
+        return new Promise ((resolve) => {
+            const productoFiltrado = productos.find ( (prod) => prod.id === parseInt(id))
+            setTimeout (() => {
+                resolve(productoFiltrado)
+            }, 2000)
+        } )
     }

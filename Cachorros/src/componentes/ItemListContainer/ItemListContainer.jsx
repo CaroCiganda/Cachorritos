@@ -1,23 +1,34 @@
-import { Center, Heading, Flex } from '@chakra-ui/react'
+import { Center, Heading, Flex, Spinner } from '@chakra-ui/react'
 //import React from 'react'
-import { getProducts } from '../../data/asyncMock'
+import { getProducts, getProductsByCategory } from '../../data/asyncMock'
 import React, {useEffect, useState} from 'react'
 import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
+import {CircleLoader} from 'react-spinners'
+
 const ItemListContainer = ({title}) => {
 
-  const [productos, setProductos] = useState([]) //se inicializa como array vacio
+  const [productos, setProductos] = useState([]) //se inicializa como array vacio, espera varios productos
+  const { categoryId } = useParams()
+  const [loading, setLoading] = useState(true)
 
   useEffect (()=> {
-    getProducts()
-    .then ((prod) => setProductos(prod))
+    setLoading(true)
+    const dataProductos = categoryId ? getProductsByCategory( categoryId ) : getProducts() // me trae el array con los productos
+    dataProductos
+    .then ((prod) => setProductos(prod)) //inicializa el estado
     .catch((error) => console.log(error))
-  }, [])
+    .finally(() => setLoading (false) )
+  }, [ categoryId ])
 
-  console.log (productos)
   return (
     <Flex direction={'column'} justify={'center'} align={'Center'}>
-    <Heading>{title}</Heading>
-    <ItemList productos={productos} /* le pasa el nombre de la prod y  la data a ItemList*/ /> 
+    <Heading mt={5}>{title}</Heading>
+    loading ?  
+    <CircleLoader />
+    :
+    <ItemList productos={productos} //nombre prop = data 
+    /> 
     </Flex>
   )
 }

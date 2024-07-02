@@ -2,18 +2,25 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 //import './App.css'
-import NavBar from './componentes/NavBar/NavBar'
-import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
-import { ChakraProvider } from '@chakra-ui/react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./componentes/NavBar/NavBar";
+import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
+import { ChakraProvider } from "@chakra-ui/react";
+import { ItemDetailContainer } from "./componentes/ItemDetailContainer/ItemDetailContainer";
 function App() {
   return (
-    
     <ChakraProvider>
-     <NavBar/>
-      <ItemListContainer title = 'Tienda de Alimentos'/>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} /> 
+          <Route path='/categorias/:categoryId' element={<ItemListContainer />} />
+          <Route path='/producto/:productId' element={<ItemDetailContainer />} />
+          <Route path='*' element={<h1>404</h1>} />
+        </Routes>
+        <ItemListContainer title="Tienda de Alimentos" />
+      </BrowserRouter>  
     </ChakraProvider>
-    
-   
   )
 }
 
