@@ -13,18 +13,27 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path='/' element={<ItemListContainer />} /> 
-          <Route path='/categorias/:categoryId' element={<ItemListContainer />} />
-          <Route path='/producto/:productId' element={<ItemDetailContainer />} />
-          <Route path='*' element={<h1>404</h1>} />
+          <Route
+            path="/"
+            element={<ItemListContainer title="Tienda de Alimentos" />}
+          />
+          <Route
+            path="/categorias/:categoryId"
+            element={<ItemListContainer title="Tienda de Alimentos" />}
+          />
+          <Route
+            path="/producto/:productId"
+            element={<ItemDetailContainer />}
+          />
+
+          <Route path="*" element={<h1>404</h1>} />
         </Routes>
-        <ItemListContainer title="Tienda de Alimentos" />
-      </BrowserRouter>  
+      </BrowserRouter>
     </ChakraProvider>
-  )
+  );
 }
 
-export default App
+export default App;
 
 /*function App() {
   const [count, setCount] = useState(0)
