@@ -15,34 +15,32 @@ import {
   Image,
 } from "@chakra-ui/react";
 //Item va a ser una card, renderizamos la info de productos
-const Item = ({ nombre, img, id,precio, stock }) => { // como puse spread en ItemList puedo elegir las propiedades del objeto prod y no pongo prod.
+const Item = ({ nombre, img, id, precio, stock }) => {
+  // como puse spread en ItemList puedo elegir las propiedades del objeto prod y no pongo prod.
   return (
-    <Card maxW='sm' m={3}>
+    <Card maxW="sm" m={3}>
       <CardBody>
         <Image
           src={img}
           alt={nombre}
-          w={'350px'}
-          h={'350px'}
-          objectFit={'cover'}
-          borderRadius='lg'
+          w={"350px"}
+          h={"350px"}
+          objectFit={"cover"}
+          borderRadius="lg"
         />
-        <Stack mt='6' spacing='3'>
-          <Heading size='md'>{nombre}</Heading>
+        <Stack mt="6" spacing="3">
+          <Heading size="md">{nombre}</Heading>
 
-          <Text color='blue.600' fontSize='2xl'>
+          <Text color="blue.600" fontSize="2xl">
             ${precio}
           </Text>
         </Stack>
       </CardBody>
-      <Divider/>
+      <Divider />
       <CardFooter>
-        <ButtonGroup spacing='2'>
+        <ButtonGroup spacing="2">
           <Button variant="solid" colorScheme="blue">
-              <Link to={`/producto/${id}`}>Ver Detalle</Link>
-          </Button>
-          <Button variant="ghost" colorScheme="blue">
-            Agregar al Carrito
+            <Link to={`/producto/${id}`}>Ver Detalle</Link>
           </Button>
         </ButtonGroup>
       </CardFooter>
@@ -51,7 +49,7 @@ const Item = ({ nombre, img, id,precio, stock }) => { // como puse spread en Ite
     /*  <div>
     <p>{nombre}</p>
   </div> */
-  )
-}
+  );
+};
 
 export default Item;

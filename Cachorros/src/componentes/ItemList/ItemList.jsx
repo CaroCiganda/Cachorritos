@@ -15,7 +15,7 @@ const ItemList = ({ productos }) => {
         </Box>
       ))}
     </Flex>
-  );
-};
+  )
+}
 
 export default ItemList;

@@ -7,6 +7,7 @@ import NavBar from "./componentes/NavBar/NavBar";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ItemDetailContainer } from "./componentes/ItemDetailContainer/ItemDetailContainer";
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <ChakraProvider>
@@ -15,18 +16,18 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<ItemListContainer title="Tienda de Alimentos" />}
+            element={<ItemListContainer background-color = "#A4A1A1" title="Tienda de Alimentos" />}
           />
           <Route
             path="/categorias/:categoryId"
-            element={<ItemListContainer title="Tienda de Alimentos" />}
+            element={<ItemListContainer background-color = "#A4A1A1" title="Tienda de Alimentos" />}
           />
           <Route
             path="/producto/:productId"
             element={<ItemDetailContainer />}
           />
 
-          <Route path="*" element={<h1>404</h1>} />
+          <Route path="*" element={<pageNotFound/>} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
