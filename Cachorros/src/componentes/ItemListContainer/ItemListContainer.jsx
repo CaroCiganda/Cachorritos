@@ -1,5 +1,4 @@
 import { Center, Heading, Flex, Spinner } from "@chakra-ui/react";
-//import React from 'react'
 import { getProducts, getProductsByCategory } from "../../data/asyncMock";
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
@@ -15,7 +14,7 @@ const ItemListContainer = ({ title }) => {
     setLoading(true);
     const dataProductos = categoryId
       ? getProductsByCategory(categoryId)
-      : getProducts(); // me trae el array con los productos
+      : getProducts(); // obtiene los productos
     dataProductos
       .then((prod) => setProductos(prod)) //inicializa el estado
       .catch((error) => console.log(error))

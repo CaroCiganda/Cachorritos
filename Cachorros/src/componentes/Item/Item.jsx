@@ -45,10 +45,6 @@ const Item = ({ nombre, img, id, precio, stock }) => {
         </ButtonGroup>
       </CardFooter>
     </Card>
-
-    /*  <div>
-    <p>{nombre}</p>
-  </div> */
   );
 };
 
