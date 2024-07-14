@@ -17,6 +17,9 @@ import {
   } from '@chakra-ui/react'
   import Context from '../../context/CartContext'
 import {Link} from 'react-router-dom'
+import { RiDeleteBinLine } from "react-icons/ri";
+import { MdDelete } from "react-icons/md";
+
 const Cart = () => {
     const {cart, removeItem, clearCart, getTotalPrice} = useContext (Context)
 
@@ -50,7 +53,7 @@ const Cart = () => {
           <Td>{prod.quantity*prod.precio}</Td>
           <Td>
             {
-                <Button onClick={() => removeItem(prod.id)}>eliminar</Button>
+                <Button onClick={() => removeItem(prod.id)} background={'transparent'}><RiDeleteBinLine /></Button>
             }
           </Td>
         </Tr>
@@ -60,8 +63,8 @@ const Cart = () => {
     </Table>
     <Flex>
         <Heading>  Total:  {getTotalPrice()} </Heading>
-        <Button onClick={() => clearCart()}>Vaciar el Carrito</Button>
-        <Heading>Finalizar compra</Heading>
+        <Button onClick={() => clearCart()}>Vaciar el Carrito <MdDelete/></Button>
+        <Text>Finalizar compra</Text>
     </Flex>
   </TableContainer>
   )
