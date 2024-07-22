@@ -6,6 +6,7 @@ import { ItemDetailContainer } from "./componentes/ItemDetailContainer/ItemDetai
 import 'react-toastify/dist/ReactToastify.css';
 import { CartContextProvider } from "./context/CartContext";
 import Cart from "./componentes/Cart/cart";
+import Checkout from "./componentes/Checkout/Checkout";
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
            <Route
             path='/cart/'
             element={<Cart/>}
+          />
+          <Route
+           path='/checkout/'
+           element={<Checkout/>}
           />
           <Route path="*" element={<pageNotFound/>} />
         </Routes>

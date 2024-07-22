@@ -4,7 +4,6 @@ import Item from "../Item/Item";
 //ItemList para recorrer el array y crear una card para cada producto
 const ItemList = ({ productos }) => {
   //recibe productos del padre ItemListContainer
-  //console.log (productos)
   return (
     <Flex wrap={"wrap"} justify={"center"} align={"center"}>
       {productos.map((prod) => (

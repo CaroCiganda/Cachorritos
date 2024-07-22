@@ -26,7 +26,7 @@ export const CartContextProvider = ({ children }) => {
     }
    
   };
-  console.log(cart);
+  //console.log(cart);
 
   const removeItem = (id) => {
     const updatedCart = cart.filter((prod) => prod.id !== id) //guarda en el carrito los prod.id != de id
@@ -49,7 +49,7 @@ export const CartContextProvider = ({ children }) => {
   const getTotalPrice = () => {
     const totalPrice = cart.reduce((actual, item) => actual + item.precio * item.quantity, 0)//param valor actual e item por el que itera
     return totalPrice
-    console.log(cart)
+    //console.log(cart)
   }
   
   return (

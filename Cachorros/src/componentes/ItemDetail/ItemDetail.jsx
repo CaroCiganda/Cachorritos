@@ -4,7 +4,7 @@ import { Card, CardBody, Heading, Image, Stack, Text, Flex, Link as ChakraLink }
 import ItemCount from "../ItemCount/ItemCount";
 import { ToastContainer, toast } from "react-toastify";
 import Context from "../../context/CartContext";
-import { productos } from "../../data/asyncMock";
+//import { productos } from "../../data/asyncMock";
 import { Link } from 'react-router-dom';
 
 

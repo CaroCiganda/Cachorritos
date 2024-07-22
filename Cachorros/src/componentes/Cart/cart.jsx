@@ -64,7 +64,8 @@ const Cart = () => {
     <Flex>
         <Heading>  Total:  {getTotalPrice()} </Heading>
         <Button onClick={() => clearCart()}>Vaciar el Carrito <MdDelete/></Button>
-        <Text>Finalizar compra</Text>
+        <Text><Link to={'/checkout'}>Finalizar compra</Link></Text>
+       
     </Flex>
   </TableContainer>
   )
